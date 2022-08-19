@@ -2,7 +2,6 @@
 #include <string.h>
 using namespace std;
 
-// array of siswa
 struct student {
     string nama, nim;
     double tugas1, tugas2, tugas3, tugas4, uts, uas, hasil, rat;
@@ -19,62 +18,52 @@ double nilaiakhir(int i, student siswa[]) {
 int main(){
     const int jumlah_siswa = 2;
     student siswa[jumlah_siswa];
-    int i, j;
-    double hasil, rat;
-    //mengulang data siswa yang akan dihitung
+    int i;
     i = 0;
-    j = 0;
     
     do {
-    // for (i = 1; i <= 1; i++) {
-        cout << "=====================================" << endl;
-        cout << "\tDATA SISWA KE\t " << i+1 << endl;
-        cout << "=====================================" << endl;
-
-        // cout << "Masukkan berapa jumlah siswa: " << endl;
-        // cin >> jumlah_siswa;
-
-        cout << "Masukkan NAMA siswa ke-" << i+1 << endl;
+        cout << "============================================================================" << endl;
+        cout << "DATA SISWA KE " << i+1 << endl;
+        cout << "Masukkan Nama Siswa : ";
         cin >> siswa[i].nama;
-
-        cout << "Masukkan NIM dari " << siswa[i].nama << ": ";
-        cin >> siswa[i].nim;
         cout << endl;
-
-        cout << "Masukkan NILAI TUGAS dari " << siswa[i].nama << ": ";
+        cout << "Masukkan NIM        : ";
+        cin >> siswa[i].nim; 
+        cout << endl;
+        cout << "Masukkan Nilai Tugas 1 : ";
         cin >> siswa[i].tugas1;
         cout << endl;
-        cout << "Masukkan NILAI TUGAS dari " << siswa[i].nama << ": ";
+        cout << "Masukkan Nilai Tugas 2 : ";
         cin >> siswa[i].tugas2;
         cout << endl;
-        cout << "Masukkan NILAI TUGAS dari " << siswa[i].nama << ": ";
+        cout << "Masukkan Nilai Tugas 3 : ";
         cin >> siswa[i].tugas3;
         cout << endl;
-        cout << "Masukkan NILAI TUGAS dari " << siswa[i].nama << ": ";
+        cout << "Masukkan Nilai Tugas 4 : ";
         cin >> siswa[i].tugas4;
         cout << endl;
 
-
-        cout << "Masukkan NILAI UTS dari " << siswa[i].nama << ": ";
+        cout << "Masukkan NILAI UTS dari " << siswa[i].nama << " : ";
         cin >> siswa[i].uts;
         cout << endl;
-
-        cout << "Masukkan NILAI UAS dari " << siswa[i].nama << ": ";
+        cout << "Masukkan NILAI UAS dari " << siswa[i].nama << " : ";
         cin >> siswa[i].uas;
         cout << endl;
 
-        cout << "-------------------------------------------------------------------------------" << endl;
-        cout << "NAMA" << "\t" << "NIM" << "\t" << "TUGAS" << "\t" << "KUIS" << "\t" << "UTS" << "\t" << "UAS" << "\t" << "NILAI AKHIR" << "\t" << endl;
-        cout << "-------------------------------------------------------------------------------" << endl;
-
-        // nilaiakhir(hasil, i);
+        cout << "----------------------------------------------------------------------------" << endl;
+        
         siswa[i].hasil = nilaiakhir(i, siswa);
         siswa[i].rat = rata(i, siswa);
-        // hasil = (siswa[i].tugas * 0.2) + (siswa[i].kuis * 0.1) + (siswa[i].uts * 0.3) + (siswa[i].uas * 0.4);
 
-        cout << siswa[i].nama << "\t" << siswa[i].nim << "\t" << siswa[i].rat << "\t" << siswa[i].uts << "\t" << siswa[i].uas << "\t";
+        cout << "Nama : " ; cout << siswa[i].nama << endl;
+        cout << "NIM  : " ; cout << siswa[i].nim << endl;
+        cout << "Rata-rata Tugas : " ; cout << siswa[i].rat << endl;
+        cout << "Nilai Akhir     : " ; 
         printf("%.2f ", siswa[i].hasil);
-
+        cout <<endl;
+        
+        cout << "----------------------------------------------------------------------------" << endl;
+        
         cout << endl;
 
         i = i + 1;

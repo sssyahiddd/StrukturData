@@ -5,41 +5,26 @@ using namespace std;
 // array of siswa
 struct student {
     string nama, nim;
-    double tugas1, tugas2, tugas3, tugas4, uts, uas, hasil;
+    double tugas1, tugas2, tugas3, tugas4, uts, uas, hasil, rat;
 };
 
-//fungsi menghitung total nilai akhir
-double nilaiakhir(int i, student siswa[]) { 
-    return (((siswa[i].tugas1 + siswa[i].tugas2 + siswa[i].tugas3 + siswa[i].tugas4) / 4) * 0.3) + (siswa[i].uts * 0.3) + (siswa[i].uas * 0.4);
+double rata (int i, student siswa[]){
+    (siswa[i].tugas1 + siswa[i].tugas2 + siswa[i].tugas3 + siswa[i].tugas4) / 4;
 }
 
-string nilaitertinggi(student siswa[], int jml) {
-    string ket;
-    int max = 0;
-    for (int i = 0; i < jml; i++) {
-        if (max < siswa[i].hasil) {
-            max = siswa[i].hasil;
-            ket = siswa[i].nim;
-        }
-    }
-    return ket;
+double nilaiakhir(int i, student siswa[]) { 
+    return (((siswa[i].tugas1 + siswa[i].tugas2 + siswa[i].tugas3 + siswa[i].tugas4) / 4) * 0.3) + (siswa[i].uts * 0.3) + (siswa[i].uas * 0.4);
 }
 
 int main(){
     const int jumlah_siswa = 2;
     student siswa[jumlah_siswa];
-    int i;
-    double hasil;
-
-    cout << "--------------------------------------------------------------------" << endl;
-    cout << "\t\t\t SELAMAT DATANG \t\t\t" << endl;
-    cout << "\t\t PROGRAM MENGHITUNG NILAI AKHIR \t\t" << endl;
-    cout << "\t MAHASISWA SISTEM INFORMASI UNIVERSITAS TARUMANAGARA \t" << endl;
-    cout << "---------------------------------------------------------------------" << endl;
-    cout << endl;
-
+    int i, j;
+    double hasil, rat;
     //mengulang data siswa yang akan dihitung
     i = 0;
+    j = 0;
+    
     do {
     // for (i = 1; i <= 1; i++) {
         cout << "=====================================" << endl;
@@ -84,23 +69,12 @@ int main(){
 
         // nilaiakhir(hasil, i);
         siswa[i].hasil = nilaiakhir(i, siswa);
+        siswa[i].rat = rata(i, siswa);
         // hasil = (siswa[i].tugas * 0.2) + (siswa[i].kuis * 0.1) + (siswa[i].uts * 0.3) + (siswa[i].uas * 0.4);
 
-        cout << siswa[i].nama << "\t" << siswa[i].nim << "\t" << siswa[i].uts << "\t" << siswa[i].uas << "\t";
+        cout << siswa[i].nama << "\t" << siswa[i].nim << "\t" << siswa[i].rat << "\t" << siswa[i].uts << "\t" << siswa[i].uas << "\t";
         printf("%.2f ", siswa[i].hasil);
 
-        if(siswa[i].hasil >= 80){
-            cout << " (A) " << endl;
-        } else if(siswa[i].hasil >= 70){
-            cout << " (B) " << endl;
-        } else if(siswa[i].hasil >= 55){
-            cout << " (C) " << endl;
-        } else if(siswa[i].hasil >= 40){
-            cout << " (D) " << endl;
-        } else {
-            cout << " (E) " << endl;
-        }
-        
         cout << endl;
 
         i = i + 1;

@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+void TambahPoin (&poinsaya, poin){poinsaya = poinsaya + poin}
+void KurangPoin (int &poinsaya, int poin, int *penggunaanpoin){ poinsaya = poinsaya – poin. Penggunaanpoin = penggunaanpoin+poin;}
+void lihatPoin(. . .){ perintah untuk lihat total poin }
+void lihatPenggunaanPoin(. . . ){ perintah untuk penggunaan poin }
+void menu (){
+    cout<<"Menu Poin"<<endl;
+    cout<<"(1) Tambah Poin "<<endl;
+    cout<<"(2) Kurang Poin "<<endl;
+    cout<<"(3) Cek Poin "<<endl;
+    cout<<"(4) Penggunaan Poin"<<endl;
+    cout<<"Masukkan Pilihan (1, 2, 3 ) : ";
+}
+int main(){
+    int pilih, poinsaya, poin, penggunaanpoin=0;
+    poinsaya = 40;
+    panggil procedure untuk melihat total poin.
+    
+    while (. . .){
+        menu();
+        cin>>pilih;
+    if (pilih==1){
+        cout<<"Masukkan Jumlah Poin Yang Ditambahkan : "; cin>>poin;
+        TambahPoin(poinsaya, poin);}
+    else if (pilih==2){
+        cout<<"Masukkan Jumlah Poin Yang DiGunakan : "; cin>>poin;
+        KurangPoin(poinsaya, poin, penggunaanpoin);}
+    else if (pilih==3){ lihatPoin(poinsaya);}
+    else if (pilih==4){lihatPenggunaanPoin(penggunaanpoin);}
+    else {cout<<"PILIHAN SALAH "<<endl;}
+    }
+    
+    cout<<" "<<endl;
+}

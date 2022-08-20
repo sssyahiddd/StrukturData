@@ -11,7 +11,7 @@ struct Nilai {
 };
 
 int main(){
-    const int jumlah_siswa = 2;
+    const int jumlah_siswa = 5;
     Siswa sis[jumlah_siswa];
     Nilai nil[jumlah_siswa];
     int i;
@@ -39,13 +39,13 @@ int main(){
         cout << "Masukkan Nilai Tugas 4 : ";
         cin >> nil[i].tugas4;
         cout << endl;
-        cout << "----------------------------------------------------------------------------" << endl;
         cout << "Masukkan Nilai UTS     : ";
         cin >> nil[i].uts;
         cout << endl;
         cout << "Masukkan Nilai UAS     : ";
         cin >> nil[i].uas;
         cout << endl;
+        cout << "----------------------------------------------------------------------------" << endl;
         
         float rata = (nil[i].tugas1 + nil[i].tugas2 + nil[i].tugas3 + nil[i].tugas4) / 4;
         
